@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stovblog.mapper.DirectorColumeMapper">
+
+    <resultMap id="BaseResultMap" type="com.stovblog.entity.DirectorColume">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="iconClass" column="icon_class" jdbcType="VARCHAR"/>
+            <result property="linkTo" column="link_to" jdbcType="VARCHAR"/>
+            <result property="isDropdown" column="is_dropdown" jdbcType="TINYINT"/>
+            <result property="childrenColume" column="children_colume" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,icon_class,
+        link_to,is_dropdown,children_colume
+    </sql>
+</mapper>

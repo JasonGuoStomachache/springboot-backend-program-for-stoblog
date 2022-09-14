@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stovblog.mapper.UsersMapper">
+
+    <resultMap id="BaseResultMap" type="com.stovblog.entity.Users">
+            <id property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="userIp" column="user_ip" jdbcType="VARCHAR"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="userPassword" column="user_password" jdbcType="VARCHAR"/>
+            <result property="userEmail" column="user_email" jdbcType="VARCHAR"/>
+            <result property="userProfilePhoto" column="user_profile_photo" jdbcType="VARCHAR"/>
+            <result property="userRegistrationTime" column="user_registration_time" jdbcType="TIMESTAMP"/>
+            <result property="userBirthday" column="user_birthday" jdbcType="DATE"/>
+            <result property="userAge" column="user_age" jdbcType="TINYINT"/>
+            <result property="userTelephoneNumber" column="user_telephone_number" jdbcType="VARCHAR"/>
+            <result property="userNickname" column="user_nickname" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id,user_ip,user_name,
+        user_password,user_email,user_profile_photo,
+        user_registration_time,user_birthday,user_age,
+        user_telephone_number,user_nickname
+    </sql>
+</mapper>
