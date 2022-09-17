@@ -35,6 +35,8 @@ public class DirectorColumeChildren implements Serializable {
      */
     private String linkTo;
 
+    private String imgSrc;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

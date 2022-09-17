@@ -9,13 +9,14 @@ import java.util.List;
 /**
 * @author 35088
 * @description 针对表【director_colume_children】的数据库操作Mapper
-* @createDate 2022-09-12 21:50:09
+* @createDate 2022-09-17 15:40:04
 * @Entity com.stovblog.entity.DirectorColumeChildren
 */
 public interface DirectorColumeChildrenMapper extends BaseMapper<DirectorColumeChildren> {
 
-    @Select("select * from director_colume_children where parent_id=#{id}")
-    List<DirectorColumeChildren> selectByparentId(int id);
+    @Select("select * from director_colume_children where parent_id = #{id}")
+    List<DirectorColumeChildren> selectByParentId(String id);
+
 }
 
 

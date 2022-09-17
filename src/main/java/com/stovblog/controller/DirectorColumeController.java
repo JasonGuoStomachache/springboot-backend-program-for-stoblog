@@ -20,4 +20,5 @@ public class DirectorColumeController {
     public List<DirectorColume> getDirectorColumes(){
         return directorColumeMapper.getAllDirectorColume();
     }
+
 }

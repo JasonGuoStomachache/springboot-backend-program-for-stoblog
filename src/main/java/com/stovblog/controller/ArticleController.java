@@ -6,35 +6,34 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 @CrossOrigin
-public class BlogImgController {
+public class ArticleController {
 
-    @PostMapping(value = "/postarticleappendix", headers = "content-type=multipart/form-data")
-    public String upLoad(@RequestParam("articleCover")MultipartFile photo,
+    @PostMapping(value = "/postarticleappendix")
+    public String upLoad(
+                         @RequestParam("articleInfo")List<String> articleInfo,
+                         @RequestParam("articleCover")MultipartFile photo,
                          @RequestParam("articleImgSet") List<MultipartFile> imgSet,
                          @RequestParam("articleFile")MultipartFile file,
                          HttpServletRequest request) throws IOException {
         String path = request.getServletContext().getRealPath("/blogcover");
         System.out.println(path);
+        for (String str: articleInfo){
+            System.out.println(str);
+        }
         System.out.println("photo:"+ photo);
         System.out.println("file:"+file);
         System.out.println("imgSet:"+imgSet);
-//        for (int i=0;i<imgSet.length;i++){
-//            System.out.println("imgest"+i+imgSet[i]);
-//            saveFile(imgSet[i],path);
-//        }
         for (MultipartFile img:imgSet
              ) {
             saveFile(img,path);
         }
         saveFile(photo,path);
         saveFile(file,path);
-
         return "succeed";
     }
 
