@@ -25,7 +25,7 @@ public interface DirectorColumeMapper extends BaseMapper<DirectorColume> {
             @Result(column = "link_to",property = "linkTo"),
             @Result(column = "is_dropdown",property = "isDropdown"),
             @Result(column = "id",property ="DirectorColumeChildrens",javaType = List.class,
-            many = @Many(select="com.stovblog.mapper.DirectorColumeChildrenMapper.selectByparentId")
+            many = @Many(select="com.stovblog.mapper.DirectorColumeChildrenMapper.selectByParentId")
             )
     })
     List<DirectorColume> getAllDirectorColume();

@@ -5,71 +5,60 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
 /**
  * 
- * @TableName zj_users
+ * @TableName user_author
  */
-@TableName(value ="zj_users")
+@TableName(value ="user_author")
 @Data
-public class Users implements Serializable {
+public class UserAuthor implements Serializable {
     /**
-     * 用户ID
+     * 
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.ID_WORKER)
     private Long userId;
 
     /**
-     * 用户IP
+     * 
      */
-    private String userIp;
+    private String userNickName;
 
     /**
-     * 用户名
-     */
-    private String userName;
-
-    /**
-     * 用户密码
+     * 
      */
     private String userPassword;
 
     /**
-     * 用户邮箱
+     * 
      */
     private String userEmail;
 
     /**
-     * 用户头像
+     * 
      */
     private String userProfilePhoto;
 
     /**
-     * 注册时间
+     * 
      */
-    private Date userRegistrationTime;
+    private String userMotto;
 
     /**
-     * 用户生日
-     */
-    private Date userBirthday;
-
-    /**
-     * 用户年龄
+     * 
      */
     private Integer userAge;
 
     /**
-     * 用户手机号
+     * 
      */
-    private String userTelephoneNumber;
+    private Long userBlogCount;
 
     /**
-     * 用户昵称
+     * 
      */
-    private String userNickname;
+    private Long userCollectionCount;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

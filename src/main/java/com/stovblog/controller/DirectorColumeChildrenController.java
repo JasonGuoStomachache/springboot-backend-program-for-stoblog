@@ -1,5 +1,7 @@
 package com.stovblog.controller;
 
+import com.stovblog.entity.DirectorColumeChildren;
+import com.stovblog.mapper.DirectorColumeChildrenMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,6 @@ public class DirectorColumeChildrenController {
 
     @GetMapping("/getpartitioncolume")
     public List<DirectorColumeChildren> getpartitioncolume(@RequestParam("id") String id){
-        return directorColumeChildrenMapper.selectByparentId(id);
+        return directorColumeChildrenMapper.selectByParentId(id);
     }
 }
